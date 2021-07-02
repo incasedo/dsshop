@@ -2,7 +2,7 @@
   <div class="app-container">
     <div class="filter-container">
       <el-menu  :default-active="listQuery.activeIndex" class="el-menu-demo" mode="horizontal" clearable @select="handleSelect">
-        <el-menu-item v-for="item of authGroupList" :index="item.id.toString()">{{ item.introduction }}</el-menu-item>
+        <el-menu-item v-for="item of authGroupList" :key="item.id" :index="item.id.toString()">{{ item.introduction }}</el-menu-item>
       </el-menu>
       <br />
       <el-input :placeholder="$t('user.queryTitle')" v-model="listQuery.title" style="width: 200px;" class="filter-item" clearable @keyup.enter.native="handleFilter"/>
